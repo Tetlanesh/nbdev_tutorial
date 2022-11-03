@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nbdev_tutorial"
+  site-url: "https://Tetlanesh.github.io/nbdev_tutorial"
+  description: "test nbdev tutorial"
+  repo-branch: main
+  repo-url: "https://github.com/Tetlanesh/nbdev_tutorial"
