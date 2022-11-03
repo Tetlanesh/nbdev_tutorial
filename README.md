@@ -12,12 +12,51 @@ documentation.
 pip install nbdev_tutorial
 ```
 
-## How to use
+## What is `nbdev` and how to get it working
 
-Fill me in please! Don’t forget code examples:
+I’m on Win10 and instead of playing with wirtualbox I went with `WSL`
+and `Anaconda` so not all steps may apply to You if You run native Linux
+or Mac or Windows.
 
-``` python
-1+1
-```
-
-    2
+1.  Install WSL (using windows store)
+2.  Install anaconda in WSL terminal - follow steps in [this
+    blog](https://emilykauffman.com/blog/install-anaconda-on-wsl)
+3.  create new conda env using
+    `conda create --name env_name python=3.10`
+4.  Activate your new env using `conda activate [env name]`
+5.  install nbdev and few other packages
+    1.  `conda install -c fastai nbdev`
+    2.  `conda install jupyter ipykernel pandas scikit-learn`
+6.  register your env with jupyter:
+    `python -m ipykernel install --user --name=[your env name]`
+7.  install quarto:
+    1.  I’ve used `Linux Tarball` as platform on [download
+        page](https://quarto.org/docs/download/)
+    2.  after selecting your download method you will get list of
+        commands to run, in my case it was:
+        1.  `wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.2.258/quarto-1.2.258-linux-amd64.tar.gz` -
+            downloads tarball
+        2.  `mkdir ~/opt`
+        3.  `tar -C ~/opt -xvzf quarto-1.2.258-linux-amd64.tar.gz` -
+            extract content of tarball
+        4.  `mkdir ~/bin`
+        5.  `ln -s ~/opt/quarto-1.2.258/bin/quarto ~/bin/quarto` -
+            create a link to quarto directory in your home directory
+        6.  `( echo ""; echo 'export PATH=$PATH:~/bin\n' ; echo "" ) >> ~/.bashrc` -
+            add the link to your PATH
+        7.  `source ~/.bashrc` - rerun the .bashrc
+        8.  `quarto check` - you should get all ok (except R) and it
+            should report your conda repo version of python
+8.  create github repo and clone it to folder where you want to keep
+    yddddour project files - `git clone [repo url]`
+9.  navigate to your project dir and run `nbdev_new` - this will create
+    multiple new files and directories needed for library to nbdev,
+    documantation, ci, etc - most importantly creates `nbs` dir where
+    the notebooks sits and `[your_project_name]` dir where the actuall
+    library code will sit
+10. run `nbdev_export` - this will run all export commands from your
+    project (we will explain more on that later - if you havent changed
+    anything this should create core.py in your project code folder that
+    reflect `00_core.ipynb` content).
+11. run `pip install -e .` - this will install your package for local
+    development allowing you to import stuff
