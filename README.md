@@ -27,6 +27,8 @@ or Mac or Windows.
 5.  install nbdev and few other packages
     1.  `conda install -c fastai nbdev`
     2.  `conda install jupyter ipykernel pandas scikit-learn`
+    3.  run `nbdev_install_hooks` this should install all required
+        jupyter related stuff if it is not laready installed
 6.  register your env with jupyter:
     `python -m ipykernel install --user --name=[your env name]`
 7.  install quarto:
@@ -47,6 +49,8 @@ or Mac or Windows.
         7.  `source ~/.bashrc` - rerun the .bashrc
         8.  `quarto check` - you should get all ok (except R) and it
             should report your conda repo version of python
+    3.  (alternative) instead of installing quarto manually you should
+        be able to run `nbdev_install_quarto` to install it
 8.  create github repo and clone it to folder where you want to keep
     yddddour project files - `git clone [repo url]`
 9.  navigate to your project dir and run `nbdev_new` - this will create
