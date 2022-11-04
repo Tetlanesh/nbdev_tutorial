@@ -12,7 +12,7 @@ documentation.
 pip install nbdev_tutorial
 ```
 
-## What is `nbdev` and how to get it working
+## How to get `nbdev` to work
 
 I’m on Win10 and instead of playing with wirtualbox I went with `WSL`
 and `Anaconda` so not all steps may apply to You if You run native Linux
@@ -60,3 +60,23 @@ or Mac or Windows.
     reflect `00_core.ipynb` content).
 11. run `pip install -e .` - this will install your package for local
     development allowing you to import stuff
+
+------------------------------------------------------------------------
+
+<a
+href="https://github.com/Tetlanesh/nbdev_tutorial/blob/main/nbdev_tutorial/core.py#LNone"
+target="_blank" style="float:right; font-size:smaller">source</a>
+
+### foo2
+
+>      foo2 ()
+
+------------------------------------------------------------------------
+
+<a
+href="https://github.com/Tetlanesh/nbdev_tutorial/blob/main/nbdev_tutorial/core.py#LNone"
+target="_blank" style="float:right; font-size:smaller">source</a>
+
+### foo2
+
+>      foo2 ()
