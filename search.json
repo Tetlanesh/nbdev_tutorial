@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev_tutorial",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev_tutorial",
+    "section": "Install",
+    "text": "Install\npip install nbdev_tutorial"
+  },
+  {
+    "objectID": "index.html#how-to-get-nbdev-to-work",
+    "href": "index.html#how-to-get-nbdev-to-work",
+    "title": "nbdev_tutorial",
+    "section": "How to get nbdev to work",
+    "text": "How to get nbdev to work\nI’m on Win10 and instead of playing with wirtualbox I went with WSL and Anaconda so not all steps may apply to You if You run native Linux or Mac or Windows.\n\nInstall WSL (using windows store)\nInstall anaconda in WSL terminal - follow steps in this blog\ncreate new conda env using conda create --name env_name python=3.10\nActivate your new env using conda activate [env name]\ninstall nbdev and few other packages\n\nconda install -c fastai nbdev\nconda install jupyter ipykernel pandas scikit-learn\nrun nbdev_install_hooks this should install all required jupyter related stuff if it is not laready installed\n\nregister your env with jupyter: python -m ipykernel install --user --name=[your env name]\ninstall quarto:\n\nI’ve used Linux Tarball as platform on download page\nafter selecting your download method you will get list of commands to run, in my case it was:\n\nwget https://github.com/quarto-dev/quarto-cli/releases/download/v1.2.258/quarto-1.2.258-linux-amd64.tar.gz - downloads tarball\nmkdir ~/opt\ntar -C ~/opt -xvzf quarto-1.2.258-linux-amd64.tar.gz - extract content of tarball\nmkdir ~/bin\nln -s ~/opt/quarto-1.2.258/bin/quarto ~/bin/quarto - create a link to quarto directory in your home directory\n( echo \"\"; echo 'export PATH=$PATH:~/bin\\n' ; echo \"\" ) >> ~/.bashrc - add the link to your PATH\nsource ~/.bashrc - rerun the .bashrc\nquarto check - you should get all ok (except R) and it should report your conda repo version of python\n\n(alternative) instead of installing quarto manually you should be able to run nbdev_install_quarto to install it\n\ncreate github repo and clone it to folder where you want to keep yddddour project files - git clone [repo url]\nnavigate to your project dir and run nbdev_new - this will create multiple new files and directories needed for library to nbdev, documantation, ci, etc - most importantly creates nbs dir where the notebooks sits and [your_project_name] dir where the actuall library code will sit\nrun nbdev_export - this will run all export commands from your project (we will explain more on that later - if you havent changed anything this should create core.py in your project code folder that reflect 00_core.ipynb content).\nrun pip install -e . - this will install your package for local development allowing you to import stuff\n\n\nsource\n\nfoo2\n\n foo2 ()\n\n\nsource\n\n\nfoo2\n\n foo2 ()"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()\n\n\nsource\n\n\nfoo\n\n foo ()\n\n\nsource\n\n\nfoo2\n\n foo2 ()"
+  }
+]
